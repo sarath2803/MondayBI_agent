@@ -1,0 +1,24 @@
+.venv
+.venv/
+models/mistral/mistral-7b-instruct-v0.2.Q4_K_M.gguf
+
+venv
+venv/
+
+# Ignore model files
+#models/
+*.gguf
+*.bin
+*.onnx
+
+# Ignore embeddings / DB
+chroma_db/
+vector_db/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore logs
+logs/
+*.log

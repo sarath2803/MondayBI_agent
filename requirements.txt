@@ -1,0 +1,8 @@
+streamlit
+openai>=1.0.0
+pandas
+requests
+python-dotenv
+numpy
+python-dateutil
+tqdm
