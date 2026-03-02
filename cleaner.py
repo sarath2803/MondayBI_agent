@@ -1,37 +1,3 @@
-# import pandas as pd
-# import re
-
-# def normalize_currency(val):
-#     if val is None:
-#         return 0
-
-#     val = str(val).lower().replace(",", "")
-
-#     if "k" in val:
-#         return float(re.sub("[^0-9.]", "", val)) * 1000
-
-#     return float(re.sub("[^0-9.]", "", val) or 0)
-
-
-# def clean_dataframe(records):
-
-#     df = pd.DataFrame(records)
-
-#     for col in df.columns:
-#         df[col] = df[col].fillna("")
-
-#     # normalize sector
-#     if "Sector" in df.columns:
-#         df["Sector"] = df["Sector"].str.title()
-
-#     # normalize amount/value
-#     for col in ["Amount", "Value"]:
-#         if col in df.columns:
-#             df[col] = df[col].apply(normalize_currency)
-
-#     return df
-
-
 import pandas as pd
 import re
 
@@ -76,10 +42,6 @@ def clean_dataframe(records):
         if "sector" in col.lower():
             df[col] = df[col].str.title()
 
-    # Auto-detect money columns
-    # for col in df.columns:
-    #     if any(k in col.lower() for k in ["value", "amount", "deal"]):
-    #         df[col] = df[col].apply(normalize_currency)
     for col in df.columns:
         if any(k in col.lower() for k in ["value", "amount", "deal"]):
             df[col] = df[col].apply(normalize_currency)
