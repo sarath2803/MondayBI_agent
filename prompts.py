@@ -1,13 +1,3 @@
-# SYSTEM_PROMPT = """
-# You are a founder-level business intelligence analyst.
-# Interpret business questions and decide:
-# - fetch deals
-# - fetch work orders
-# - analyze pipeline
-# Return concise insights.
-# """
-
-
 SYSTEM_PROMPT = """
 You are a senior startup business intelligence analyst.
 
